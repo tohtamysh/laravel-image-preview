@@ -1,0 +1,36 @@
+{
+  "name": "tohtamysh/laravel-image-preview",
+  "description": "Image preview for Laravel",
+  "keywords": ["laravel", "image", "preview"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tohtamysh",
+      "email": "tohtamysh@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/routing": "5.5.x|5.6.x|5.7.x",
+    "illuminate/support": "5.5.x|5.6.x|5.7.x",
+    "intervention/image": "^2.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tohtamysh\\ImagePreview\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Tohtamysh\\ImagePreview\\ServiceProvider"
+      ],
+      "aliases": {
+        "ImagePreview": "Tohtamysh\\ImagePreview\\Facade"
+      }
+    }
+  },
+  "require-dev": {
+    "laravel/framework": "5.7.x"
+  }
+}
