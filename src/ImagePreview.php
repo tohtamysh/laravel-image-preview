@@ -81,8 +81,10 @@ class ImagePreview
 
         header('Content-Type:' . $image->mime);
         header('Content-Length: ' . Storage::disk('public')->size($path));
-        header('Cache-Control: max-age=31536000');
-        header('Cache-Control: private');
+        header('Cache-Control: privat; max-age=31536000');
+        header("Expires: " . (gmdate("D, d M Y H:i:s", time() + (60 * 60 * 24 * 365)) . " GMT"));
+        header("Pragma: cache");
+        header("Cache-Control: max-age=" . (60 * 60 * 24 * 365));
         readfile(Storage::disk('public')->getDriver()->getAdapter()->applyPathPrefix($path));
         exit();
     }
@@ -101,7 +103,7 @@ class ImagePreview
             throw new FileNotFoundException('File ' . $param->file . ' not found');
         }
 
-        if(!$param->width && !$param->height){
+        if (!$param->width && !$param->height) {
             throw new ParamException('Uri param error');
         }
 
