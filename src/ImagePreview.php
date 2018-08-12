@@ -81,6 +81,8 @@ class ImagePreview
 
         header('Content-Type:' . $image->mime);
         header('Content-Length: ' . Storage::disk('public')->size($path));
+        header('Cache-Control: max-age=31536000');
+        header('Cache-Control: private');
         readfile(Storage::disk('public')->getDriver()->getAdapter()->applyPathPrefix($path));
         exit();
     }
