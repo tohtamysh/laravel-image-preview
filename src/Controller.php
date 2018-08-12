@@ -17,9 +17,9 @@ class Controller extends \Illuminate\Routing\Controller
 
     public function preview(Request $request)
     {
-        $param = $this->imagePreview->parsePath($request->path());
+        $this->imagePreview->parsePath($request->path());
 
-        if($path = $this->imagePreview->createThumbnail($param))
+        if($path = $this->imagePreview->createThumbnail())
         {
             $this->imagePreview->getFile($path);
         }else{
