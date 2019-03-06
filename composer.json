@@ -12,7 +12,7 @@
   "homepage": "https://github.com/tohtamysh/laravel-image-preview",
   "require": {
     "php": ">=7.0",
-    "illuminate/support": "5.5.x|5.6.x|5.7.x",
+    "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
     "intervention/image": "^2.4.2"
   },
   "autoload": {
@@ -31,6 +31,6 @@
     }
   },
   "require-dev": {
-    "laravel/framework": "5.7.x"
+    "laravel/framework": "5.7.x|5.8.x"
   }
 }
